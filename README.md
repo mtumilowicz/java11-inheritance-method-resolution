@@ -52,7 +52,7 @@ _Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp
         ```
         assertThat(new Clazz().introduce(), is("InterfaceChild"));
         ```
-1. otherwise - class has to explicitly select method
+1. otherwise - class has to `@Override` method
 
     it is covered in my other github repos:
     * https://github.com/mtumilowicz/java11-invoking-default-method  
