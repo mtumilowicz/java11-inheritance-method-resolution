@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-inheritance-method-resolution.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-inheritance-method-resolution)
+
 # java11-inheritance-method-resolution
 _Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563  
 
