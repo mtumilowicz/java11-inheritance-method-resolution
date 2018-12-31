@@ -2,7 +2,7 @@
 
 # java11-inheritance-method-resolution
 _Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563  
-
+_Reference_: https://github.com/mtumilowicz/java11-default-methods-conflicts
 # resolution rules
 1. classes always win, package: **first**
     * hierarchy
@@ -55,7 +55,32 @@ _Reference_: https://www.amazon.com/Modern-Java-Action-functional-programming/dp
         assertThat(new Clazz().introduce(), is("InterfaceChild"));
         ```
 1. otherwise - class has to `@Override` method
-
-    it is covered in my other github repos:
-    * https://github.com/mtumilowicz/java11-invoking-default-method  
-    * https://github.com/mtumilowicz/java11-default-methods-conflicts
+    * hierarchy
+        ```
+        interface Interface1 {
+            default String introduce() {
+                return "Interface1";
+            }
+        }
+        
+        interface Interface2 {
+            default String introduce() {
+                return "Interface2";
+            }
+        }
+        
+        class Clazz implements Interface1, Interface2 {
+        
+            @Override
+            public String introduce() {
+                return "Clazz";
+            }
+        }
+        ```
+    * tests
+        ```
+        assertThat(new Clazz().introduce(), is("Clazz"));
+        ```
+    * It is worth knowing that it is possible to explicitly call
+    default method from enclosing interface: 
+    https://github.com/mtumilowicz/java11-invoking-default-method  
