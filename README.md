@@ -54,7 +54,7 @@ _Reference_: https://github.com/mtumilowicz/java11-default-methods-conflicts
         ```
         assertThat(new Clazz().introduce(), is("InterfaceChild"));
         ```
-1. otherwise - class has to `@Override` method
+1. otherwise - class has to `@Override` clashing method
     * hierarchy
         ```
         interface Interface1 {
